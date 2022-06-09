@@ -91,21 +91,116 @@ ul li a {margin-left: -45px; padding: 1px  1x;}
 } */
 
 
-.spinner{width:80px; height:80px; border: 3.5px solid #f3f3f3; border-top: 5px solid #89c557; border-radius: 100%; position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; animation:spin 3s infinite ease-in-out;}
-@keyframes spin {
+.spinner{width:80px; height:80px;  position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; animation:spin 3s infinite ease-in-out;}
+
+.spinner img {width: 90px; height:90px;}
+@keyframes null {
 from{transform: rotate(0deg);}
 to{transform:rotate(300deg);}
 }
 
-#overlay{height:100vh;width:100%;background:rgba(0, 0, 0, .2);}
+#overlay{height:100vh;width:100%;background:white;}
 
+.ball_main {
+    /* display: flex; */
+    /* justify-content:center; */
+    /* align-items:center; */
+    /* flex-direction: column; */
+    width: 360px;
+    /* position:relative; */
+    /* margin-top:70vh !important; */
+    margin:auto;
+    
+}
+
+.balls {
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.ball {
+    position: absolute;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: peru;
+    border-radius: 50%;
+    margin: 0 20px;
+    animation: ball 4s infinite;
+}
+
+.ball--1 {
+    background-image: linear-gradient(to bottom, #ffe93e, #ff952a);
+}
+
+
+.ball--2 {
+    background-image: linear-gradient(to bottom, #ff009e, #ff0038);
+}
+
+.ball--3 {
+    background-image: linear-gradient(to bottom, #00f4fe, #00bdfb);
+}
+
+.ball--4 {
+    background-image: linear-gradient(to bottom, #fc00f9, #b500f9);
+}
+
+.balls-2 .ball--1 {
+    left: 20px; animation-delay: 2s;
+}
+
+
+.balls-2 .ball--2 {
+    left: 100px; animation-delay: 2.05s;
+}
+
+.balls-2 .ball--3 {
+    left: 20px; animation-delay: 2.1s;
+}
+
+.balls-2 .ball--4 {
+    left: 20px; animation-delay: 2.15s;
+}
+
+@keyframes ball {
+    0%, 25%{ top: -50px}
+    35%{ top: calc(60% - 50px);}
+    40%{ top: calc(45% - 50px);}
+    45%{ top: calc(55% - 50px);}
+    50%, 70%{ top: calc(50% - 25px);}
+    80%, 100%{ top: (100%);}
+}
 </style>
 </head>
 <body>
 
     <div id="overlay">
-        <div class="spinner"></div>
+        <div class="spinner"><img src="IMG-20220522-WA0002.jpg" width/>
+        
         </div>
+
+        <div class="ball_main">
+
+            <div class="balls balls-1">
+                <div class="ball ball--1"></div>
+                <div class="ball ball--2"></div>
+                <div class="ball ball--3"></div>
+                <div class="ball ball--4"></div>
+            </div>
+
+            <div class="balls balls-2">
+                <div class="ball ball--1"></div>
+                <div class="ball ball--2"></div>
+                <div class="ball ball--3"></div>
+                <div class="ball ball--4"></div>
+            </div>
+
+        </div>
+
+    </div>
         <!-- <div id="overlay">
         <div class="loader"></div>
         </div> -->
@@ -400,8 +495,14 @@ document.querySelector("#menu_unorder_list").style.left="100%";
 
 //media menu toggle
 function myFunction(x) {
-  x.classList.toggle("change");
-  document.querySelector("#menu_unorder_list").style.left="-100%";
+ var list = document.querySelector("#menu_unorder_list");
+ 
+ if (x.classList.toggle("change")){
+    list.style.left="0%";
+ }
+ else {
+    list.style.left="100%";
+    }
 }
 </script>
 
