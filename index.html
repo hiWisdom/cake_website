@@ -20,19 +20,44 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   background-image: url("background.jpg");
   min-height: 100%;
 }
+.w3-top ul {float:right;margin-right: 20px; line-height:10px;}
+.w3-top ul li{display: inline-block; margin:0 5px;}
+.w3-top ul li a{text-transform: uppercase;padding: 7px 13px;border-radius: 3px;}
+.checkbox{float:right; margin-top:16px; display: none;}
+.checkbotton{display: ; float:right; padding:20px;}
+#checkbox{display: none;}
+@media (max-width:858px){
+    .checkbox{float:right; margin-top:16px; display:block; cursor:pointer;}
+.checkbotton{display: block;}
+ul{position: fixed;width: 100%; height: 100vh; background:black; top:32px; left:-100%;text-align: center; transition: all .5s;}
+nav ul li{display: block;}
+#checkbox:checked ~ ul{
+    left:100%;
+}
+}
 </style>
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-     <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><img src="IMG-20220522-WA0002.jpg" width="60" height="40"/></b></a>
-      <a href="#" class="w3-bar-item w3-button">HOME</a>
-      <a href="#menu" class="w3-bar-item w3-button">MENU</a>
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off"  id="myNavbar">
+     <a href="#index.html" class="w3-bar-item w3-button"><img src="IMG-20220522-WA0002.jpg" width="60" height="40"/></b></a>
+     <ul>
+    <li>
+        <a href="#" class="w3-bar-item w3-button">HOME</a> </li>
+      <li>  <a href="#menu" class="w3-bar-item w3-button">MENU</a> </li>
+       <li> <a href="#about" class="w3-bar-item w3-button">ABOUT</a> </li>
+       <li> <a href="#about" class="w3-bar-item w3-button">CAKE CATEGORIES</a> </li>
+       <li> <a href="#about" class="w3-bar-item w3-button">LOGIN/ REGISTERS</a> </li>
+        <li><a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+    </li>
+    </ul>
+    <input type="checkbox" id="checkbox"/>
+    <label for="checkbox" class="checkbox"><i class="fas fa-bars checkbotton"></i>MENU</label>
     </div>
+
   </div>
     
   <!-- Header with image -->
@@ -133,11 +158,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32 w3-center">  
-    <h3>About Me, The Food Man</h3><br>
+    <h3>About Cake, The Cake Man</h3><br>
     <img src="chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
     <div class="w3-padding-32">
       <h4><b>I am Who I Am!</b></h4>
-      <h6><i>With Passion For Real, Good Food</i></h6>
+      <h6><i>With Passion For Real, Good Cakes</i></h6>
       <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
     </div>
   </div>
@@ -162,25 +187,32 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
     <div class="3-main w3-content w3-padding" style="color: white;">
 
     <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <p>Powered by <a href="https://redrockng.com/" target="_blank" class="rrt-hover-text-green"> RedRock Technologies </a> &copy <span id="date"></span></p>
+      <h3>Contact us today</h3>
+      <p>If you are looking for birthday cakes near me in the UAE, then there’s one name that you can trust in the market – Pandora. For further details, please feel free to connect with us at +971 54 734 6688. Place your orders today!</p>
     </div>
+
+    <div class="w3-third">
+        <h3>Why choose XF Cakes for your cake delivery in Nigeria</h3>
+        <p>The number one priority for the cake designers and bakers at XF CAKES is to provide the most delectable and well-decorated cakes that are baked to perfection. Our custom cakes are prepared as per the requirements of our clients. Most importantly, our cakes are prepared fresh and to order, so there is nothing for you to worry about in terms of their freshness. We only use the freshest ingredients to ensure that you enjoy a tasteful and mouth-watering sensation right from the first bite.
+
+            For us, every single celebration and event is unique, and for this reason, we have dedicated ourselves to delivering the most unique and delicious cakes to make them even more special. Our baking experts possess the skills required to create out of this world cakes that are surely going to amaze you and your guests. We can bake cakes from over 39 flavors and styles as per your requirements. To add to that, we also have almost 45 designs specifically for children to guarantee fun and happy times!.</p>
+        <p>Powered by <a href="https://redrockng.com/" target="_blank" class="rrt-hover-text-green"> RedRock Technologies </a> &copy <span id="date"></span></p>
+      </div>
   
     <div class="w3-third">
       <h3>BLOG POSTS</h3>
-      <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">
+      <dl class="w3-ul w3-hoverable">
+        <dd class="w3-padding-16">
           <img src="IMG-20220522-WA0011.jpg" class="w3-left w3-margin-right" style="width:50px">
           <span class="w3-large">Lorem</span><br>
           <span>Sed mattis nunc</span>
-        </li>
-        <li class="w3-padding-16">
+        </dd>
+        <dd class="w3-padding-16">
           <img src="IMG-20220522-WA0012.jpg" class="w3-left w3-margin-right" style="width:50px">
           <span class="w3-large">Ipsum</span><br>
           <span>Praes tinci sed</span>
-        </li> 
-      </ul>
+        </dd> 
+      </dl>
     </div>
 
     <div class="w3-third w3-serif">
