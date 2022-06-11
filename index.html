@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>xf cakes</title>
+<title>XF Cakes</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="main.css">
@@ -29,13 +29,35 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 @media (max-width:858px){
     .checkbox{float:right; margin-top:16px; display:block; cursor:pointer;}
 .checkbotton{display: block;}
-ul{position: fixed;width: 100%; height: 100vh; background:black; top:32px; left:0%; text-align: center; transition: all .5s; display:grid;}
+ul{position: fixed;width: 100%; height: 100vh; background:black; top:52.4px; left:0%; text-align: center; transition: all .5s; display:grid;}
 .w3-top ul li{display: block;}
-ul li a {margin-left: -45px; padding: 1px  1x;}
+ul li a {margin-left: -39.5px; padding: 1px  1x;}
 #checkbox:checked ~ ul{
     left:100%;
 }
+
+.menu_link_0 {
+  margin-top:0.8cm;
 }
+
+.menu_link_A {
+  margin-top:-1.8cm;
+}
+
+.menu_link_B {
+  margin-top:-2.7cm;
+}
+
+.menu_link_C {
+  margin-top:-3.6cm;
+}
+
+.menu_link_D {
+  margin-top:-4.5cm;
+}
+
+}
+
 
 .container {
   display: inline-block;
@@ -208,7 +230,7 @@ to{transform:rotate(300deg);}
 <div class="w3-top">
 
     <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off"  id="myNavbar">
-     <a href="#index.html" class="w3-bar-item w3-button"><img src="IMG-20220522-WA0002.jpg" width="60" height="40"/></b></a>
+     <a href="#index.html" class="w3-bar-item w3-button"><img src="IMG-20220522-WA0002.jpg" width="80" height="60"/></a>
 
      <input type="checkbox" id="checkbox"/>
      <label for="checkbox" class="checkbox"><i class="fas fa-bars checkbotton"></i><div class="container" onclick="myFunction(this)">
@@ -219,11 +241,11 @@ to{transform:rotate(300deg);}
     </label>
 
      <ul id="menu_unorder_list">
-        <li><a href="#" class="w3-bar-item w3-button">HOME</a></li>
-       <li><a href="#about" class="w3-bar-item w3-button">ABOUT</a></li>
-       <li><a href="#about" class="w3-bar-item w3-button">CAKE CATEGORIES</a></li>
-       <li><a href="#about" class="w3-bar-item w3-button">LOGIN/ REGISTERS</a></li>
-        <li><a href="#myMap" class="w3-bar-item w3-button">CONTACT</a></li>
+        <li class="menu_list"><a href="#" class="w3-bar-item w3-button menu_link menu_link_0">HOME</a></li>
+       <li class="menu_list"><a href="#about" class="w3-bar-item w3-button menu_link menu_link_A">ABOUT</a></li>
+       <li class="menu_list"><a href="#about" class="w3-bar-item w3-button menu_link menu_link_B">CAKE CATEGORIES</a></li>
+       <li class="menu_list"><a href="#about" class="w3-bar-item w3-button menu_link  menu_link_C">LOGIN/ REGISTERS</a></li>
+        <li class="menu_list"><a href="#myMap" class="w3-bar-item w3-button menu_link  menu_link_D">CONTACT</a></li>
     </ul>
 
     </div>
@@ -253,30 +275,59 @@ to{transform:rotate(300deg);}
       <h3>Best Customized Cream Cake Makers in Town!</h3>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0004.jpg" alt="Sandwich" style="width:100%">
-      <h3>Biscuit Cake</h3>
-      <h4>From :</h4> <h2>5,000.00</h2>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+
+      <div class="products_images">
+              <a href=""><img src="IMG-20220522-WA0010.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0005.jpg" alt="Steak" style="width:100%">
-      <h3>Chocolate Cake</h3>
-      <h4>From :</h4> <h2>5,000.00</h2>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0004.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0006.jpg" alt="Cherries" style="width:100%">
-      <h3>Angel Food Cake</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0005.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0007.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Chiffon Cake</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0006.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
     </div>
 
   </div>
@@ -287,27 +338,60 @@ to{transform:rotate(300deg);}
     <h3>Best Birthday Cream Cake Makers in Town!</h3>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0008.jpg" alt="Popsicle" style="width:100%">
-      <h3>Pound Cake</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0014.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0009.jpg" alt="Salmon" style="width:100%">
-      <h3>Sponge Cake</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+ 
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0015.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0014.jpg" alt="Sandwich" style="width:100%">
-      <h3>Butter Cake</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0016.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
     </div>
 
     <div class="w3-quarter">
-      <img src="IMG-20220522-WA0017.jpg" alt="Croissant" style="width:100%">
-      <h3>Genoise Cake</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+    
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0017.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
+    
     </div>
 
   </div>
@@ -339,7 +423,7 @@ to{transform:rotate(300deg);}
   <hr>
   
 
-  <div class="w3-third">
+  <div class="w3-two">
     <h3>Why choose XF Cakes for your cake delivery in Nigeria</h3>
     <p>The number one priority for the cake designers and bakers at XF CAKES is to provide the most delectable and well-decorated cakes that are baked to perfection. Our custom cakes are prepared as per the requirements of our clients. Most importantly, our cakes are prepared fresh and to order, so there is nothing for you to worry about in terms of their freshness. We only use the freshest ingredients to ensure that you enjoy a tasteful and mouth-watering sensation right from the first bite.
 
@@ -365,26 +449,26 @@ to{transform:rotate(300deg);}
 
 
         <div class="w3-third">
-            <h3>Our mission</h3>
+            <h3>OUR MISSION</h3>
             <p>Daily satisfy our clients with our mouth-watering cakes and chops and also create an opportunity for all learners to acquire the art of caking knowledge.</p>
         </div>
 
 
     <div class="w3-third">
-        <h3>Our vision</h3>
+        <h3>OUR VISION</h3>
         <p> To be one of the top catering services in Nigeria.</p>
     </div>
 
     <div class="w3-third">
-        <h3>Our services</h3>
-        <li>Wedding cakes</li>
-        <li>Character cakes</li>
-        <li>Dessert cakes</li>
-        <li>Fine tasty Chin Chin</li>
-        <li>Event management</li>
-        <li>Pastries</li>
-        <li>Training Training Training</li>
-        <li>Extrasflavourcakes and lots more</li>
+        <h3>OUR SERVICES</h3>
+        <li><a href="">Wedding cakes</a></li>
+        <li><a href="">Character cakes</a></li>
+        <li><a href="">Dessert cakes</a></li>
+        <li><a href="">Fine tasty Chin Chin</a></li>
+        <li><a href="">Event management</a></li>
+        <li><a href="">Pastries</a></li>
+        <li><a href="">Training Training Training</a></li>
+        <li><a href="">Extrasflavourcakes and lots more</a></li>
       </div>
   
     <div class="w3-third">
@@ -410,7 +494,7 @@ to{transform:rotate(300deg);}
  
 
       <div class="w3-third">
-        <h3>Contact us today</h3>
+        <h3>CONTACT US TODAY</h3>
         <p>If you are looking for birthday cakes near me in the Nigeria, then there’s one name that you can trust in the market – XF Cakes. For further details, please feel free to connect with us at Address is Tpumpy estate phase 6 lugbe Abuja Nigeria, contact numbers 09094973584 , 07063031608. Place your orders today!</p>
       </div>
     
@@ -423,11 +507,34 @@ to{transform:rotate(300deg);}
       <div class="w3-third w3-serif">
         <h3>POPULAR TAGS</h3>
         <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Birthday Cakes</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chocolate Cake</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cake for Kids</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cake for Men</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Desserts Table</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Butter Cake</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cupcakes and Desserts Table</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Biscuit Cake</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Genoise Cake</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cream Cake</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sponge Cake</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Butter Cake</span>
+          
+          <span class="w3-tag w3-black w3-margin-bottom"><a href="">Birthday Cakes</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Chocolate Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cake for Kids</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cake for Men</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Desserts Table</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Drinks</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Butter Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cupcakes and Desserts Table</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cuisine</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Biscuit Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Genoise Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cream Cake</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Sponge Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Butter Cake</a></span>
         </p>
       </div>
   
