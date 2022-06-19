@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>XF Cakes</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="edit_main.css">
+
+<!-- link favicon -->
+<link rel="icon" type="image/x-icon" href="IMG-20220522-WA0002.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("background.jpg");
+  min-height: 100%;
+}
+.w3-top ul {float:right;margin-right: 20px; line-height:10px;}
+.w3-top ul li{display: inline-block; margin:0 5px;}
+.w3-top ul li a{text-transform: uppercase;padding: 7px 13px;border-radius: 3px;}
+.checkbox{float:right; margin-top:16px; display: none;}
+.checkbotton{display: ; float:right; padding:20px;}
+#checkbox{display: none;}
+
+
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 40px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* #overlay{
+    height:100vh;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; 
+  animation: spin 2s linear infinite;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:40vh;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
+
+
+.spinner{width:80px; height:80px;  position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; animation:spin 3s infinite ease-in-out;}
+
+.spinner img {width: 90px; height:90px;}
+@keyframes null {
+from{transform: rotate(0deg);}
+to{transform:rotate(300deg);}
+}
+
+#overlay{height:100vh;width:100%;background:white;}
+
+.ball_main {
+    /* display: flex; */
+    /* justify-content:center; */
+    /* align-items:center; */
+    /* flex-direction: column; */
+    width: 360px;
+    /* position:relative; */
+    /* margin-top:70vh !important; */
+    margin:auto;
+    
+}
+
+.balls {
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.ball {
+    position: absolute;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: peru;
+    border-radius: 50%;
+    margin: 0 20px;
+    animation: ball 4s infinite;
+}
+
+.ball--1 {
+    background-image: linear-gradient(to bottom, #ffe93e, #ff952a);
+}
+
+
+.ball--2 {
+    background-image: linear-gradient(to bottom, #ff009e, #ff0038);
+}
+
+.ball--3 {
+    background-image: linear-gradient(to bottom, #00f4fe, #00bdfb);
+}
+
+.ball--4 {
+    background-image: linear-gradient(to bottom, #fc00f9, #b500f9);
+}
+
+.balls-2 .ball--1 {
+    left: 20px; animation-delay: 2s;
+}
+
+
+.balls-2 .ball--2 {
+    left: 100px; animation-delay: 2.05s;
+}
+
+.balls-2 .ball--3 {
+    left: 20px; animation-delay: 2.1s;
+}
+
+.balls-2 .ball--4 {
+    left: 20px; animation-delay: 2.15s;
+}
+
+@keyframes ball {
+    0%, 25%{ top: -50px}
+    35%{ top: calc(60% - 50px);}
+    40%{ top: calc(45% - 50px);}
+    45%{ top: calc(55% - 50px);}
+    50%, 70%{ top: calc(50% - 25px);}
+    80%, 100%{ top: (100%);}
+}
+
+
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+  
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: none; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: black; /* Black w/ opacity */
+  padding-top: 60px;
+  margin-left:;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin-top: -55px ; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  margin-left: 25%;
+  padding: 0 10%;
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+
+.signup {
+	width: 35%;
+}
+	
+
+.social_links {
+	display: flex;
+}
+
+
+.social_handles {
+	margin: 10px;
+}
+
+.social_handles_icon {
+	font-size: 25px;
+}
+ 
+@media (max-width:858px){
+
+
+/* Login Form Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: scroll; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: black; /* Black w/ opacity */
+  padding-top: 60px;
+  margin:0;
+}
+
+
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+.modal-content {
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */ 
+  margin-top: default;
+  margin: 5px auto; /* 15% from the top and centered */
+  margin-left: 0%;
+}
+
+    .checkbox{float:right; margin-top:16px; display:block; cursor:pointer;}
+.checkbotton{display: block;}
+ul{position: fixed;width: 100%; height: 100vh; background:black; top:52.4px; left:0%; text-align: center; transition: all .5s; display:grid;}
+.w3-top ul li{display: block;}
+ul li a {margin-left: -39.5px; padding: 1px  1x;}
+#checkbox:checked ~ ul{
+    left:100%;
+}
+
+.menu_link_0 {
+  margin-top:0.8cm;
+}
+
+.menu_link_A {
+  margin-top:-1.8cm;
+}
+
+.menu_link_B {
+  margin-top:-2.7cm;
+}
+
+.menu_link_C {
+  margin-top:-3.6cm;
+}
+
+.menu_link_D {
+  margin-top:-4.5cm;
+}
+
+.menu_link_E {
+  margin-top:-5.4cm;
+}
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+    <div id="overlay">
+        <div class="spinner"><img src="IMG-20220522-WA0002.jpg" width/>
+        
+        </div>
+
+        <div class="ball_main">
+
+            <div class="balls balls-1">
+                <div class="ball ball--1"></div>
+                <div class="ball ball--2"></div>
+                <div class="ball ball--3"></div>
+                <div class="ball ball--4"></div>
+            </div>
+
+            <div class="balls balls-2">
+                <div class="ball ball--1"></div>
+                <div class="ball ball--2"></div>
+                <div class="ball ball--3"></div>
+                <div class="ball ball--4"></div>
+            </div>
+
+        </div>
+
+    </div>
+        <!-- <div id="overlay">
+        <div class="loader"></div>
+        </div> -->
+
+<div class="w3-top">
+
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off"  id="myNavbar">
+     <a href="index.html" class="w3-bar-item w3-button"><img src="IMG-20220522-WA0002.jpg" width="80" height="60"/></a>
+
+     <input type="checkbox" id="checkbox"/>
+     <label for="checkbox" class="checkbox"><i class="checkbotton"></i><div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </label>
+
+     <ul id="menu_unorder_list">
+       <li class="menu_list xfcakes_home_tag_display"><a href="index.html" class="w3-bar-item w3-button menu_link menu_link_0">HOME</a></li>
+       <li class="menu_list"><a href="#footer" class="w3-bar-item w3-button menu_link menu_link_A">ABOUT</a></li>
+       <li class="menu_list"><a href="#cake_categories" class="w3-bar-item w3-button menu_link menu_link_B">CAKE CATEGORIES</a></li>
+       <li class="menu_list"><a href="#contact" class="w3-bar-item w3-button menu_link  menu_link_C">CONTACT</a></li>
+       <li class="menu_list"><a href="#" class="w3-bar-item w3-button menu_link  menu_link_D" onclick="document.getElementById('login_mode').style.display='block'">LOGIN</a></li>
+       <li class="menu_list"><a href="#" class="w3-bar-item w3-button menu_link  menu_link_E" onclick="document.getElementById('signup_mode').style.display='block'">SIGN UP</a></li>
+    </ul>
+
+    </div>
+
+  </div>
+    
+	
+<!-- The Modal Login Form -->
+<div id="login_mode" class="modal">
+  <span style="color:white; font-size:55px;" onclick="document.getElementById('login_mode').style.display='none'" class="close" title="Close">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="login_img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('login_mode').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="signup_mode" class="modal">
+  <span style="color:white; font-size:55px;" onclick="document.getElementById('signup_mode').style.display='none'" class="close" title="Close">&times;</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+	  
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+	  
+	  
+      <label for="email"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter Phone Number" name="phone" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('signup_mode').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signup">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+	
+	
+	
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-padding">
+      <span class="w3-tag w3-xlarge">Open from 9am to 7pm</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white w3-hide-small" style="font-size:100px">Delicious<br>CRUST CAKES</span>
+      <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
+      <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Scroll Down To See More</a></p>
+    </div>
+  </header>
+  
+  
+  
+  
+<div id="cake_categories"></div>  <!-- !PRODUCTS CONTENT! -->
+  
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      <h1 style="text-align:center"><b>Cream Cake</b></h1>
+      <h3>Best Customized Cream Cake Makers in Town!</h3>
+
+    <div class="w3-quarter">
+	
+	<div class="products_container">
+	
+      <div class="products_images">
+              <a href=""><img src="IMG-20220522-WA0010.jpg" alt="Sandwich" class="product_image"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <p>Fresh delicious Biscuit Cake with special XF Cakes Ingredient</p>
+        <p>Regular</p> <p>N5,200.<sup>00</sup> </p>
+        <p>Large</p> <p>N8,200.<sup>00</sup> </p>
+		<button>Read more</button> <button> Add Cart <i class="fa fa-basket"></i></button>
+      </div>
+	</div>
+	
+    </div>
+
+    <div class="w3-quarter">
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0004.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
+    </div>
+
+    <div class="w3-quarter">
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0005.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
+    </div>
+
+    <div class="w3-quarter">
+      
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0006.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
+    </div>
+
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <h1 style="text-align:center"><b>Birthday Cakes</b></h1>
+    <h3>Best Birthday Cream Cake Makers in Town!</h3>
+
+    <div class="w3-quarter">
+
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0014.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+
+    </div>
+
+    <div class="w3-quarter">
+ 
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0015.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
+    </div>
+
+    <div class="w3-quarter">
+    
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0016.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
+    </div>
+
+    <div class="w3-quarter">
+    
+      <div class="products_images">
+        <a href=""><img src="IMG-20220522-WA0017.jpg" alt="Sandwich" style="width:100%"></a>
+      </div>
+
+      <div class="products_description">
+        <h3>Biscuit Cake</h3>
+        <h4>From  N5,000.00</h4>
+        <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum. <button>Read more/ Order Now</button> </p>
+      </div>
+    
+    
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">&laquo;</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">w3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">&raquo;</a>
+    </div>
+  </div>
+  
+  <hr id="about">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3>About Cake, The Cake Man</h3><br>
+    <img src="chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <div class="w3-padding-32">
+      <h4><b>I am Who I Am!</b></h4>
+      <h6><i>With Passion For Real, Good Cakes</i></h6>
+      <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    </div>
+  </div>
+  <hr>
+  
+
+  <div class="w3-two">
+    <h3>Why choose XF Cakes for your cake delivery in Nigeria</h3>
+    <p>The number one priority for the cake designers and bakers at XF CAKES is to provide the most delectable and well-decorated cakes that are baked to perfection. Our custom cakes are prepared as per the requirements of our clients. Most importantly, our cakes are prepared fresh and to order, so there is nothing for you to worry about in terms of their freshness. We only use the freshest ingredients to ensure that you enjoy a tasteful and mouth-watering sensation right from the first bite.
+
+        For us, every single celebration and event is unique, and for this reason, we have dedicated ourselves to delivering the most unique and delicious cakes to make them even more special. Our baking experts possess the skills required to create out of this world cakes that are surely going to amaze you and your guests. We can bake cakes from over 39 flavors and styles as per your requirements. To add to that, we also have almost 45 designs specifically for children to guarantee fun and happy times!.</p>
+</div>
+
+
+<!-- End page content -->
+</div>
+
+
+<div class="waveDesign" style="margin-bottom:-10px;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"> 
+      <path fill="black" fill-opacity="10" d="M0,256L120,256C240,256,480,256,720,218.7C960,181,1200,107,1320,69.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    </svg>
+  </div>
+
+
+  <!-- Footer -->
+  <footer id="footer" class="w3-row-padding w3-padding-32" style="background-color: black;">
+
+    <div class="w3-main w3-content w3-padding">
+
+
+        <div class="w3-third">
+            <h3>OUR MISSION</h3>
+            <p>Daily satisfy our clients with our mouth-watering cakes and chops and also create an opportunity for all learners to acquire the art of caking knowledge.</p>
+        </div>
+
+
+    <div class="w3-third">
+        <h3>OUR VISION</h3>
+        <p> To be one of the top catering services in Nigeria.</p>
+    </div>
+
+    <div class="w3-third">
+        <h3>OUR SERVICES</h3>
+        <li><a href="">Wedding cakes</a></li>
+        <li><a href="">Character cakes</a></li>
+        <li><a href="">Dessert cakes</a></li>
+        <li><a href="">Fine tasty Chin Chin</a></li>
+        <li><a href="">Event management</a></li>
+        <li><a href="">Pastries</a></li>
+        <li><a href="">Training Training Training</a></li>
+        <li><a href="">Extrasflavourcakes and lots more</a></li>
+      </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <dl class="w3-ul w3-hoverable">
+        <dd class="w3-padding-16">
+          <img src="IMG-20220522-WA0011.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </dd>
+        <dd class="w3-padding-16">
+          <img src="IMG-20220522-WA0012.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </dd> 
+      </dl>
+    </div>
+
+
+
+ 
+
+      <div class="w3-third" id="contact">
+        <h3>CONTACT US TODAY</h3>
+        <p>If you are looking for birthday cakes near me in the Nigeria, then there’s one name that you can trust in the market – XF Cakes. For further details, please feel free to connect with us at Address is Tpumpy estate phase 6 lugbe Abuja Nigeria, contact numbers 09094973584 , 07063031608. Place your orders today!</p>
+      </div>
+    
+
+  
+    
+
+
+      <div class="w3-third w3-serif">
+        <h3>POPULAR TAGS</h3>
+        <p>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Birthday Cakes</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Chocolate Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cake for Kids</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cake for Men</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Desserts Table</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Drinks</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Butter Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cupcakes and Desserts Table</a></span>
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cuisine</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Biscuit Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Genoise Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Cream Cake</a></span>
+
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Sponge Cake</a></span> 
+          
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom"><a href="">Butter Cake</a></span>
+        </p>
+      </div>
+	  
+
+  
+      <div class="w3-third">
+		
+		<div class="social_links">
+				<p class="social_links_container">
+					<p class="social_links_a social_handles"><a href="" ><i class="fa fa-facebook social_handles_icon"></i>Facebook</a></p>
+					<p class="social_links_b social_handles"><a href="" ><i class="fa fa-twitter social_handles_icon"></i>Twitter</a></p>
+					<p class="social_links_c social_handles"><a href="" ><i class="fa fa-youtube social_handles_icon"></i>Youtube</a></p>
+					<p class="social_links_d social_handles"><a href="" ><i class="fa fa-instagram social_handles_icon"></i>Instagram</a></p>
+				</p>
+		</div>
+		
+	  </div>
+
+	  
+  
+      <div class="w3-third">
+        <p> XF Cakes &copy <span id="date"></span> All Rights Reserved, Powered by <a href="https://redrockng.com/" target="_blank" class="rrt-hover-text-green"> RedRock Technologies </a></p>
+        </div>
+
+
+
+    </div>
+
+  </footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+//date update start
+var updatedTime = document.querySelector('#date');
+var newTime = new Date();
+var newShortTime = newTime.getFullYear();
+updatedTime.innerHTML = newShortTime;
+//date update ends
+
+
+//website loading event
+
+//get website element by creating variables
+var topLoading = document.querySelector(".w3-top"), 
+bgLoading = document.querySelector(".bgimg"), 
+mainLoading = document.querySelector(".w3-main"), 
+waveDesignerLoading = document.querySelector(".waveDesign"),
+footerLoading = document.querySelector("footer");
+
+
+
+topLoading.style.display="none";
+bgLoading.style.display="none";
+mainLoading.style.display="none";
+waveDesignerLoading.style.display="none";
+footerLoading.style.display="none";
+
+
+
+var overlay = document.getElementById("overlay");
+window.addEventListener('load', function(){
+overlay.style.display="none";
+topLoading.style.display="block";
+bgLoading.style.display="block";
+mainLoading.style.display="block";
+waveDesignerLoading.style.display="block";
+footerLoading.style.display="block";
+document.querySelector("#menu_unorder_list").style.left="100%";
+});
+
+//website loading event
+
+
+//media menu toggle
+function myFunction(x) {
+ var list = document.querySelector("#menu_unorder_list");
+ 
+ if (x.classList.toggle("change")){
+    list.style.left="0%";
+ }
+ else {
+    list.style.left="100%";
+    }
+}
+
+
+// Get the login modal
+var login_modal = document.getElementById('login_mode');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Get the signup modal
+var signup_modal = document.getElementById('signup_mode');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
